@@ -17,12 +17,15 @@ def string_checker(user_response, valid_ans):
 
 
 to_test = [
-    ("yes", "yes"),
-    ("Y", "yes"),
-    ("No", "no"),
-    ("N", "no"),
-    ("YeS", "yes"),
-    ("maybe", "invalid")
+    ("Rock", "rock"),
+    ("PAPER", "paper"),
+    ("scissors", "scissors"),
+    ("R", "rock"),
+    ("P", "paper"),
+    ("S", "scissors"),
+    ("XXX", "xxx"),
+    ("x", "xxx"),
+    ("random", "invalid")
 ]
 
 for item in to_test:
@@ -30,9 +33,10 @@ for item in to_test:
     case = item[0]
     expected = item[1]
 
-    actual = string_checker(case, ["yes", "no"])
+    actual = string_checker(case, ["rock", "paper", "scissors", "xxx"])
 
     if actual == expected:
         print(f"✔✔✔Passed! Case: {case}, expected: {expected}, received: {actual}✔✔✔")
     else:
         print(f"❌❌❌ Failed! Case: {case}, expected: {expected}, received: {actual}❌❌❌")
+        
