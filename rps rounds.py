@@ -5,13 +5,15 @@ def rounds(question):
     while True:
         try:
 
-            num_rounds = int(input(question))
+            num_rounds = input(question)
 
-            if num_rounds > 0:
-                return num_rounds
+            if num_rounds == "":
+                ans = "infinite"
+                return ans
 
-            elif num_rounds == "":
-                return num_rounds
+            elif int(num_rounds) > 0:
+                ans = num_rounds
+                return ans
 
             else:
                 print(error)
@@ -19,3 +21,7 @@ def rounds(question):
         except ValueError:
             print(error)
 
+
+# main routine
+games = rounds("How many rounds? ")
+print(games)
