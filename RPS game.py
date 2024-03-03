@@ -41,10 +41,16 @@ else:
 
 # games loop starts
 while rounds_played < rounds_to_play:
-    input("choose your weapon: ")
+    weapon = input("choose your weapon: ")
+    
+    if weapon == "xxx":
+        break
+
     rounds_played += 1
     print("Rounds played: ", rounds_played)
 
     # if inf mode, increase number of rounds
     if mode == "infinite":
         rounds_to_play += 1
+
+    print("num rounds: ", num_rounds)
