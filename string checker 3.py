@@ -1,6 +1,6 @@
 # checks valid RPS input
 # option based on list
-def string_checker(question, valid_ans=["yes", "no"]):
+def string_checker(question, valid_ans=("yes", "no")):
     error = f"Please enter a valid option from the following list: {valid_ans}"
     while True:
 

@@ -1,18 +1,22 @@
 import time
 
 
-def yes_no(question):
-    # starts loop
+def string_checker(question, valid_ans=("yes", "no")):
+    error = f"Please enter a valid option from the following list: {valid_ans}"
     while True:
-        response = input(question).lower()
 
-        # defines
-        if response == "yes" or response == "y":
-            return "yes"
-        elif response == "no" or response == "n":
-            return "no"
-        else:
-            print("please answer yes or no")
+        user_response = input(question).lower()
+
+        for item in valid_ans:
+
+            if item == user_response:
+                return item
+
+            elif user_response == item[0]:
+                return item
+
+        print(error)
+        print()
 
 
 def instructions():
@@ -47,3 +51,13 @@ def instructions():
 
 
 # main routine
+print("\n💎📄✂ Rock / Paper / Scissors Game ✂📄💎")
+print()
+
+want_instructions = string_checker("Do you want instructions? ")
+
+# checks users enter yes (y) or no (n)
+if want_instructions == "yes":
+    instructions()
+
+print("Program continues")
