@@ -25,6 +25,6 @@ want_instructions = string_checker("Do you want instructions? ")
 
 print("you chose ", want_instructions)
 
-weapon = string_checker("choose your weapon ", rps_list)
+weapon = string_checker("choose your user_weapon ", rps_list)
 
 print("You chose ", weapon)
